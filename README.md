@@ -9,6 +9,6 @@ include what to learn , how to learn ,
 
 two parts :math for machine - learning
 
-         :base knowledge for computor science
+          :base knowledge for computor science
          
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
