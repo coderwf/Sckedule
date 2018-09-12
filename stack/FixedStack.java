@@ -1,49 +1,48 @@
 package stack;
 
-/*¹Ì¶¨´óĞ¡µÄÕ»,µ×²ãÓÃÊı×éÊµÏÖ,²»¿ÉÀ©³ä
- * »ù±¾·½·¨:
- * 1.È¡Êı¾İ
- * 2.´æÊı¾İ
- * 3.ÅĞ¶ÏÎª¿Õ
- * 4.ÅĞ¶ÏÎªÂú
- * 5.²é¿´¶¥²¿Êı¾İ
- * 6.¸´Ğ´toString·½·¨*/
-public class FixedStack {
-	//¶¨ÒåÒ»¸ö´æ·ÅÊı¾İµÄÈİÆ÷´óĞ¡¹Ì¶¨
-	char container[];
+/*å›ºå®šå¤§å°çš„æ•°ç»„æ ˆ
+ * 1.pop()
+ * 2.top()
+ * 3.push()
+ * 4.isEmpty()
+ * 5.isFull()
+ * 6.toString()*/
+public class FixedStack <T> {
+	//è£…æ•°æ®çš„å®¹å™¨ç”¨æ•°ç»„è¡¨ç¤º
+	T [] container;
 	int size;
-	int top = -1;//Õ»¶¥µÄÎ»ÖÃË÷Òı
-	//¹¹Ôìº¯Êı´«ÈëÊı×é´óĞ¡
+	int top = -1;//æ ˆä¸ºç©º åˆ™topä¸º-1
+	//æ„é€ å‡½æ•°ä¼ å…¥æ ˆå¤§å°
     public FixedStack(int size) {
-        this.container = new char [50];
+        this.container = (T[]) new Object[50];
         this.size      = size;
     }
-    //Ä¬ÈÏ´óĞ¡50
+    //æ ˆé»˜è®¤å¤§å°ä¸º50
     public FixedStack() {
     	this(50);
     }
     
-    //..........»ù±¾·½·¨
-    public char pop() {
+    //å¼¹å‡ºæ ˆé¡¶å…ƒç´ 
+    public T pop() {
     	if(top == -1) {
     		System.out.println("stack is empty ...");
-    		return 0;
+    		return null;
     	}//if
     	
-    	char temp = container[top];
+    	T temp = container[top];
     	top -= 1;
     	return temp;
     }//pop
     
-    public char top() {
+    public T top() {
     	if(top == -1) {
     		System.out.println("stack is empty ...");
-    		return 0;
+    		return null;
     	}//if
     	return container[top];
     }
     
-    public void push(char value) {
+    public void push(T value) {
     	//System.out.println(size-1);
     	if(top == size - 1) {
     		System.out.println("stack is full ...");
